@@ -9,6 +9,7 @@ import Admin from "./components/Admin.jsx"
 import { UserDataProvider } from './context/UserDataContext.jsx'
 import { ProductProvider } from './context/ProductContext.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { PayPalScriptProvider } from '@paypal/react-paypal-js'
 
 const router = createBrowserRouter([
   {
@@ -20,9 +21,20 @@ const router = createBrowserRouter([
     element: <UserDataProvider>
       <LoginForm /> 
     </UserDataProvider>
-      
-  
   },
+  
+  {
+    path: '/profile',
+    element: (<UserDataProvider> <PayPalScriptProvider
+    options={{
+      "clientId": "test",
+      components: "buttons",
+      currency: "MXN"
+    }}
+    > <Profile />
+    </PayPalScriptProvider> 
+    </UserDataProvider>
+)},
   {
     path: "/profile",
     element: <UserDataProvider> <Profile /> </UserDataProvider>
