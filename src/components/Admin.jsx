@@ -84,39 +84,50 @@ const Admin = () => {
 
     return (
     <div>
-         <Navbar expand="lg" className="bg-body-tertiary" >
-      <Container style={{backgroundColor: "pink"}}>
-        <Navbar.Brand href="#home" style={{color:"white"}}>Barbie Shop</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav"   style={{backgroundColor:"pink"}} />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="http://localhost:5173/"  style={{color:"white"}}>Home</Nav.Link>
-            <Nav.Link href="#"  style={{color:"white"}}>Mi perfil</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+        <div className='navBar'>
+
+<Navbar expand="lg">
+<Container>    
+<Navbar.Brand href="#home" style={{fontSize: "35px", color: "rgb(254, 70, 165)", fontFamily: "Pacifico"}}>BarbieShop</Navbar.Brand>
+<Navbar.Toggle aria-controls="basic-navbar-nav" style={{backgroundColor:"pink"}} />
+<Navbar.Collapse id="basic-navbar-nav">
+ <Nav className="me-auto">
+   <Nav.Link href="http://localhost:5173/"  style={{color:"rgb(254, 70, 165)", paddingLeft: "50px"}}>Home</Nav.Link>
+   <Nav.Link href="#"  style={{color:"rgb(254, 70, 165)"}}>Mi Perfil</Nav.Link>
+ </Nav>
+</Navbar.Collapse>
+</Container>
+</Navbar>
+
+</div>
         {userData ? 
         (
-            <div>
-             <h1  style={{background: "pink"}}>Bienvenid@ admin {userData.name} </h1>
-             <button onClick={ handleOut } style={{color: "pink"}}> Cerrar sesión</button>
+            <div style={{margin:"5rem",  fontFamily: "Bricolage Grotesque"}}>
+             <h1  style={{color: "pink", display:"flex"}}>Bienvenid@ admin {userData.name} </h1>
+             <button onClick={ handleOut } style={{backgroundColor:"pink", borderRadius:"50px", borderColor:"white", color: "rgb(254, 70, 165)", display:"flex",  marginTop:"50px"}}> Cerrar sesión</button>
 
-             <input type="text" placeholder='Nombre' name='name' onChange={handleChange} />
-             <input type="text" placeholder='Descripción' name='descrption' onChange={handleChange} />
+             <div style={{ marginTop:"50px"}}>
+
+             <input style={{marginBottom:"2rem",}} type="text" placeholder='Nombre' name='name' onChange={handleChange} />
+             <input  type="text" placeholder='Descripción' name='descrption' onChange={handleChange} />
              <input type="text" placeholder='Precio' name='price' onChange={handleChange} />
-             <input type="text" placeholder='Imagen' name='image' onChange={handleChange} />
+             <input style={{marginRight:"2rem"}} type="text" placeholder='Imagen' name='image' onChange={handleChange} />
              
-             <button onClick={()=> PostProduct()}  style={{color: "pink"}}>Enviar</button>
+             
+             <button onClick={()=> PostProduct()}  style={{marginRight:"5rem", backgroundColor:"pink",color: "white", borderRadius:"50px",  borderColor:"pink"}}>Enviar</button>
 
+
+             </div>
+
+            
              <table>
-                <thead>
-                <tr>
-                    <th style={{color: "pink", textAlign: "center"}} >Nombre</th>
-                    <th style={{color: "pink", textAlign: "center"}} >Descripción</th>
-                    <th style={{color: "pink", textAlign: "center"}} >Precio</th>
-                    <th style={{color: "pink", textAlign: "center"}} >Imagen</th>
-                    <th style={{color: "pink", textAlign: "center"}} >Opciones</th>
+                <thead style={{ fontSize:"16pt", color:"rgb(116, 203, 235)", height:"3rem" }} >
+                <tr >
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th style={{textAlign:"center"}} >Precio</th>
+                    <th style={{textAlign:"center"}} >Imagen</th>
+                    <th style={{textAlign:"center"}}  >Opciones</th>
                 </tr>
                 </thead>
                 {
@@ -124,13 +135,13 @@ const Admin = () => {
                     (
                         <tbody key={producto._id}>
                             <tr>
-                                <td>{producto.name}</td>
-                                <td>{producto.description}</td>
-                                <td>{producto.price}</td>
-                                <td><img src={producto.image} style={{width: "5rem"}} /> </td>
+                                <td style={{ paddingBottom:"2rem" , color: "rgb(254, 70, 165)",paddingRight:"2rem"}}>{producto.name}</td>
+                                <td style={{ paddingBottom:"2rem" , paddingRight:"2rem"}}>{producto.description}</td>
+                                <td style={{ paddingBottom:"2rem" , color: "rgb(254, 70, 165)", paddingLeft:"2rem", paddingRight:"2rem"}}>{producto.price}</td>
+                                <td><img src={producto.image} style={{paddingTop:"1rem", paddingBottom:"1rem", width: "5rem", marginLeft:"2rem", marginRight:"2rem"}} /> </td>
                                 <td>
-                                    <button style={{color: "pink"}}>Editar</button>
-                                    <button style={{color: "pink"}}>Eliminar</button>
+                                    <button style={{marginLeft:"2rem", backgroundColor:"rgba(246,242,165,255)", borderColor:"rgba(246,242,165,255)", color: "rgb(254, 70, 165)", borderRadius:"50px", marginRight:"2rem"}}>Editar</button>
+                                    <button style={{backgroundColor:"rgb(254, 70, 165)", color: "white", borderRadius:"50px", borderColor:"rgb(254, 70, 165)"}}>Eliminar</button>
 
                                 </td>
 

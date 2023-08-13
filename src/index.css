@@ -29,6 +29,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  font-family: "Bricolage Grotesque", sans-serif;
 }
 
 h1 {
