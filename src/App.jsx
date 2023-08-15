@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
-import {Container, Row, Card, Button, Col, Nav, Navbar, NavDropdown} from "react-bootstrap"
+import {Container, Row, Card, Button, Col, Nav, Navbar} from "react-bootstrap"
 import { ProductContext } from './context/ProductContext'
 import axios from "axios"
 import "./App.css"
-import { useNavigate } from 'react-router-dom'
-
+import { Form, useNavigate } from 'react-router-dom'
+import "bootstrap-icons/font/bootstrap-icons.json"
 
 
 const App = () => {
@@ -72,6 +72,13 @@ const App = () => {
       </Container>
 
       </div>
+
+      <footer className='navBar' style={{display:"flex",textAlign:"center"}}> 
+      <h5 style={{paddingRight:"5rem"}}>Nosotros</h5>
+
+
+
+      </footer>
       
 
     </div>

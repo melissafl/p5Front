@@ -1,5 +1,4 @@
 .navBar {
-  display: flex;
   color: rgb(254, 70, 165);
   background-color: "white";
   height: 5rem;
@@ -31,4 +30,13 @@
   padding-left: 7rem;
   text-align: left;
   align-content: left;
+}
+
+.profile {
+  background-image: url("https://media0.giphy.com/media/nnsonYMgqQEzCC87aH/giphy.gif?cid=6c09b952uq6lqoiq3o82noz90d9lto54lislxmd6c0g8u4tj&ep=v1_stickers_related&rid=giphy.gif&ct=s");
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 30rem;
+  color: rgba(249, 172, 216, 255);
+  margin: 5rem;
 }
